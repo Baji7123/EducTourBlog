@@ -10,15 +10,22 @@
   /* Update the extension and the format tag */
   src: url("./assets/fonts/FuturaCyrillicMedium.woff2") format("woff2"); 
 }
+
+@font-face {
+  font-family: "Whizbang";
+  src: url("./assets/fonts/WhizBang-Roman.woff2") format("woff2"); 
+}
+
 @theme {
   --font-invincible: "Invincible", sans-serif;
   --font-futura: "Futura", sans-serif;
+  --font-whizbang: "Whizbang", sans-serif;
   --animate-zoom: zoom-in 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-fade: fade-in 3s ease-out forwards;
 }
 @keyframes zoom-in {
   0% {
-    transform: scale(0.5); /* Start at 50% size */
+    transform: scale(0.7); /* Start at 50% size */
     opacity: 0;            /* Start invisible */
   }
   100% {
@@ -31,4 +38,73 @@
 @keyframes fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@utility bg-halftone {
+  /* Draws the tiny circle. Change the 0.15 opacity to make dots darker/lighter */
+  background-image: radial-gradient(circle, rgba(0,0,0,0.25) 2px, transparent 2.5px);
+  /* Controls the spacing between dots */
+  background-size: 8px 8px;
+  /* (Optional) Slight rotation makes it look more authentic */
+  background-position: 0 0, 6px 6px;
+}
+@utility bg-halftone-darker {
+  /* Draws the tiny circle. Change the 0.15 opacity to make dots darker/lighter */
+  background-image: radial-gradient(circle, rgba(0,0,0,0.50) 2px, transparent 2.5px);
+  /* Controls the spacing between dots */
+  background-size: 8px 8px;
+  /* (Optional) Slight rotation makes it look more authentic */
+  background-position: 0 0, 6px 6px;
+}
+
+@utility bg-starburst {
+  background-image: 
+    /* Layer 1: Thin, frequent rays */
+    repeating-conic-gradient(
+      transparent 0deg, 
+      transparent 5deg, 
+      rgba(0,0,0, 0.1) 5deg, 
+      rgba(0,0,0, 0.1) 6deg
+    ),
+    /* Layer 2: Medium rays, spaced further apart */
+    repeating-conic-gradient(
+      transparent 0deg, 
+      transparent 12deg, 
+      rgba(0,0,0, 0.15) 12deg, 
+      rgba(0,0,0, 0.15) 14deg
+    ),
+    /* Layer 3: Thick, rare rays */
+    repeating-conic-gradient(
+      transparent 0deg, 
+      transparent 35deg, 
+      rgba(0,0,0, 0.25) 35deg, 
+      rgba(0,0,0, 0.25) 39deg
+    );
+  
+  /* Centers the burst perfectly in the middle of the container */
+  background-position: center;
+  background-size: cover;
+}
+
+@utility bg-starburst-centered {
+  /* 1. The exact same highly-optimized starburst */
+  background: repeating-conic-gradient(
+    transparent 0 4deg, rgba(0,0,0,0.1) 0 5deg,
+    transparent 0 12deg, rgba(0,0,0,0.15) 0 14deg,
+    transparent 0 25deg, rgba(0,0,0,0.25) 0 28deg
+  );
+  
+  /* 2. Punch a hole in the center! */
+  /* This hides the background-image from 0% to 30% from the center */
+  mask-image: radial-gradient(circle, transparent 30%, black 31%);
+  -webkit-mask-image: radial-gradient(circle, transparent 30%, black 50%);
+}
+
+@utility bg-starburst-2 {
+  /* Combines all 3 layers into a single gradient using hard color stops! */
+  background: repeating-conic-gradient(
+    transparent 0 4deg, rgba(0,0,0,0.1) 0 5deg,
+    transparent 0 12deg, rgba(0,0,0,0.15) 0 14deg,
+    transparent 0 25deg, rgba(0,0,0,0.25) 0 28deg
+  );
 }

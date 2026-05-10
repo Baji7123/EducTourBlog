@@ -8,13 +8,297 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body class="bg-[#F6F0D7]">
-    <div class="min-h-dvh flex items-center justify-center ">
-      <div class="flex flex-col items-center">
-      <img class="h-64 animate-zoom" src="./src/assets/images/invincible2.png" alt="Invincible Logo">
-      <h1 class="font-futura text-4xl text-[#1A3918] pt-4 animate-fade [animation-delay:400ms] opacity-0 delay-500">
-        By Albert Angelus Rivera
-      </h1>
+    
+    <div id="dark-backdrop-global" class="fixed inset-0 bg-black/80 z-40 opacity-0 pointer-events-none transition-opacity duration-700 ease-in-out"></div>
+    <div class="fixed inset-0 flex items-center justify-between px-4 sm:px-10 z-60 pointer-events-none">
+      <button id="arrow-left" class="opacity-0 translate-x-5 p-3 bg-black/50 rounded-full cursor-pointer hover:bg-black/80 duration-300 transition-all ease-out pointer-events-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <button id="arrow-right" class="opacity-0 translate-x-5 p-3 bg-black/50 rounded-full cursor-pointer hover:bg-black/80 duration-300 transition-all ease-out pointer-events-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
     </div>
-</div>
+    <!-- main container -->
+    <div id="stage-container">
+        <div class="min-h-dvh flex items-center justify-center relative z-0">
+            <div class="flex flex-col items-center">
+              <img class="h-64 animate-zoom" src="./src/assets/images/invincible2.png" alt="Invincible Logo">
+              <h1 class="font-futura text-4xl text-[#1A3918] pt-4 animate-fade [animation-delay:400ms] opacity-0 delay-500 justify-center text-center">
+                Western Mindanao State University <br>
+                7 Days of fun adventure
+                <br>
+                <span class="text-2xl">By Albert Angelus Rivera</span>
+              </h1>
+            </div>
+        </div>
+        <div class="min-h-dvh flex flex-col items-center justify-center bg-[#F6F0D7] p-4 perspective-[2000px] relative z-50 overflow-hidden">
+          <div id="dark-backdrop-local" class="absolute inset-0 bg-black/80 z-40 opacity-0 pointer-events-none transition-opacity duration-700 ease-in-out"></div>
+          <div id="comic-book" class="relative max-w-md w-full transition-all duration-700 ease-in-out z-50 group/book hover:scale-105 hover:-rotate-1 cursor-pointer">
+              <div class="comic-leaf relative w-full origin-left transition-transform duration-700 ease-in-out transform-3d">
+                <div id="front-cover-face" class="relative w-full border-8 border-black bg-halftone bg-white flex flex-col group overflow-hidden [backface-visibility:hidden] z-20">
+                  <div class="bg-black text-white font-sans text-xs uppercase tracking-widest p-1 flex justify-between px-4 z-20">
+                    <span>IT EducTour</span>
+                    <span>Vol. 1</span>
+                  </div>
+                  <div class="absolute top-40 left-4 z-20 bg-[#ffe800] border-4 border-black w-16 h-16 flex flex-col items-center justify-center [box-shadow:4px_4px_0_#000] transform -rotate-15 transition-transform group-hover:rotate-0">
+                      <span class="font-bold text-black text-xs leading-none">DAY</span>
+                      <span class="font-invincible text-4xl text-black leading-none">1</span>
+                  </div>
+                  <div class="absolute top-8 left-0 w-full z-10 flex justify-center pointer-events-none">
+                      <h1 class="font-invincible text-7xl sm:text-8xl text-[#ffe800] uppercase tracking-tighter [-webkit-text-stroke:3px_#000] [text-shadow:3px_3px_0_#000,6px_6px_0_#000] transform -rotate-2">
+                        Luneta Park
+                      </h1>
+                  </div>
+                  <div class="absolute h-full bg-starburst-centered w-full top-0 left-0 z-5 opacity-50 pointer-events-none"></div>
+                  <div class="absolute h-30 bg-halftone w-full bottom-0 left-0 z-5 opacity-50 pointer-events-none"></div>
+                  <div class="absolute h-15 bg-halftone-darker w-full bottom-0 left-0 z-5 opacity-50 pointer-events-none"></div>
+                  <div class="w-full h-125 sm:h-150 border-b-8 border-black relative z-0">
+                      <img id="coverpage" src="./src/assets/images/Day 1/DSC_0333.jpg" alt="Cover Image" class="w-full h-full object-cover">
+                  </div>
+                  <div class="absolute bg-red-500 w-70 right-5 bottom-7 p-4 flex flex-col items-center justify-center z-20 rotate-5 [box-shadow:4px_4px_0_#000]">
+                      <h2 class="font-invincible text-3xl text-yellow-300 uppercase tracking-wide text-center">
+                          Discovering the Rich History of the Philippines!
+                      </h2>
+                  </div>
+                </div>
+
+                <div id="inside-cover-face" class="absolute gap-2 inset-0 border-8 border-black bg-white flex flex-col p-6 backface-hidden transform-[rotateY(180deg)] [box-shadow:12px_12px_0_#000]">
+                  <div>
+                    <h2 class="font-whizbang text-xs">The story begins with the batch of BSIT boarded on an airplane to Manila, travelling right away to the luneta park after landing... </h2>
+                  </div>
+                  <div class="flex h-125 w-full gap-2">
+                    <img class="h-full w-30 border-4 border-black object-cover object-[30%_10%]" src="/src/assets/images/Day 1/IMG_20260405_045525_386.jpg">
+                    <div class="flex flex-col gap-2 w-full h-full">
+                      <img class="h-[70%] w-full border-4 border-black object-cover object-[30%_50%]" src="/src/assets/images/Day 1/IMG_20260405_062450_506.jpg">
+                      <img class="h-[28.5%] w-full border-4 border-black object-cover object-[60%_50%]" src="/src/assets/images/Day 1/IMG_20260405_062615_259.jpg">
+                    </div>
+                  </div>
+                  <h2 class="absolute -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 1</h2>
+                </div>
+              </div>
+
+              <div class="comic-leaf absolute inset-0 w-full h-full origin-left transition-transform duration-700 ease-in-out transform-3d">
+                <div id="page-1-face" class="absolute inset-0 gap-2 border-8 border-black bg-white flex flex-col p-6 backface-hidden [box-shadow:12px_12px_0_#000]">
+                  <div class="flex w-full h-80 gap-2">
+                    <img class="border-4 bg-starburst-2 w-3/5 object-cover" src="/src/assets/images/Day 1/pic1.jpg">
+                    <img class="border-4 w-2/5 object-cover" src="/src/assets/images/Day 1/dsc_0333.jpg">
+                  </div>
+                  <div><h2 class="font-whizbang text-xs text-center">Visited the Rizal Park and saw the beautiful life history of Jose Rizal.</h2></div>
+                  <div class="w-full h-51 overflow-hidden border-4 border-black">
+                    <img class="w-full h-full object-cover scale-115" src="/src/assets/images/Day 1/groupPic.jpeg">
+                  </div>
+                  <h2 class="absolute right-5 -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 2</h2>
+                </div>
+                <div id="page-2-face" class="absolute inset-0 border-8 gap-2 border-black bg-white flex flex-col p-6 backface-hidden transform-[rotateY(180deg)] [box-shadow:12px_12px_0_#000]">
+                  <img class="border-4 h-40 w-full object-cover" src="/src/assets/images/Day 1/DSC_0337.JPG">
+                  <img class="border-4 h-59 w-full object-cover" src="/src/assets/images/Day 1/DSC_0346.JPG">
+                  <img class="border-4 h-40 w-full object-cover" src="/src/assets/images/Day 1/DSC_0350.JPG">
+                  <h2 class="absolute -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 3</h2>
+                </div>
+              </div>
+
+              <div class="comic-leaf absolute inset-0 w-full h-full origin-left transition-transform duration-700 ease-in-out transform-3d">
+                <div id="page-3-face" class="absolute gap-2 inset-0 border-8 border-black bg-white flex flex-col p-6 backface-hidden [box-shadow:12px_12px_0_#000]">
+                  <div class="flex w-97.5 h-90 gap-2 items-center">
+                    <h2 class="font-whizbang text-xs text-center">The class arrived at intramuros where Fort Santiago and the Manila Cathedral was located.</h2>
+                    <img class="border-4 h-80 w-3/5 object-cover" src="/src/assets/images/Day 1/pic4.JPG">
+                  </div>
+                  <div class="flex w-full gap-2 pb-1">
+                    <img class="border-4 h-60 w-3/5 object-cover" src="/src/assets/images/Day 1/pic5.JPG">
+                    <img class="border-4 h-60 w-2/5 object-cover object-[70%]" src="/src/assets/images/Day 1/DSC_0356-2.jpg">
+                  </div>
+                  <h2 class="absolute right-5 -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 4</h2>
+                </div>
+                <div id="inside-cathedral-face" class="absolute gap-2 inset-0 border-8 border-black bg-white flex flex-col p-6 backface-hidden transform-[rotateY(180deg)] [box-shadow:12px_12px_0_#000]">
+                  <h2 class="font-whizbang text-xs text-center">The beauty of intramuros.</h2>
+                  <div class="flex gap-2">
+                    <img class="border-4 h-60 w-3/5 object-cover" src="/src/assets/images/Day 1/pic3.JPG">
+                    <img class="border-4 h-60 w-37 object-cover" src="/src/assets/images/Day 1/pic8.JPG">
+                  </div>
+                  <img class="border-4 h-35 w-full object-cover object-[0%_100%]" src="/src/assets/images/Day 1/pic9.JPG">
+                  <img class="border-4 h-35 w-full object-cover object-[0%_80%]" src="/src/assets/images/Day 1/pic10.JPG">
+                  <h2 class="absolute -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 5</h2>
+                </div>
+              </div>
+
+              <div class="comic-leaf absolute inset-0 w-full h-full origin-left transition-transform duration-700 ease-in-out transform-3d">
+                <div id="new-left-face" class="absolute inset-0 border-8 border-black bg-white flex flex-col p-6 backface-hidden [box-shadow:12px_12px_0_#000] z-20">
+                  <h2 class="font-whizbang text-xs text-center mb-2">Fort Santiago, a historic citadel located within the walled city of Intramuros, serving as a significant defensive fortress and a poignant memorial to the Philippine national hero, José Rizal.</h2>
+                  <img class="border-4 h-45 w-full object-cover" src="/src/assets/images/Day 1/pic11.JPG">
+                  <div class="flex gap-2 mt-2">
+                    <img class="border-4 w-30.5 object-cover object-[60%_80%]" src="/src/assets/images/Day 1/pic12.JPG">
+                    <img class="border-4 h-72 w-30.5 object-cover" src="/src/assets/images/Day 1/pic13.JPG">
+                    <img class="border-4 h-72 w-30.5 object-cover object-[35%_80%]" src="/src/assets/images/Day 1/pic14.JPG">
+                  </div>
+                  <h2 class="absolute right-5 -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 6</h2>
+                </div>
+                <div id="new-right-face" class="absolute inset-0 border-8 border-black bg-white flex flex-col p-6 backface-hidden transform-[rotateY(180deg)] [box-shadow:12px_12px_0_#000] z-10">
+                  <img class="border-4 w-full h-50 object-cover object-[70%_60%] mb-2" src="/src/assets/images/Day 1/pic7.jpg">
+                  <h2 class="font-whizbang text-xs text-center mb-2">After a long walk, we went to Mall of Asia.</h2>
+                  <img class="border-4 w-full h-50 object-cover object-[0%_40%] mb-2" src="/src/assets/images/Day 1/pic15.jpg">
+                  <img class="border-4 w-full h-28 object-cover object-[0%_60%] mb-2" src="/src/assets/images/Day 1/pic16.jpg">
+                  <h2 class="absolute -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 7</h2>
+                </div>
+              </div>
+
+              <div class="comic-leaf absolute inset-0 w-full h-full origin-left transition-transform duration-700 ease-in-out transform-3d">
+                <div id="end-left-face" class="absolute inset-0 border-8 border-black bg-white flex flex-col p-6 backface-hidden [box-shadow:12px_12px_0_#000] z-20">
+                  <div class="flex gap-2">
+                    <img class="border-4 w-40 h-80 object-cover mb-2" src="/src/assets/images/Day 1/pic17.jpg">
+                    <img class="border-4 w-55 h-80 object-cover mb-2" src="/src/assets/images/Day 1/pic18.jpg">
+                  </div>
+                  <h2 class="font-whizbang text-sm text-center mb-2">End of Day 1</h2>
+                  <div class="flex gap-2">
+                    <img class="border-4 w-50 h-53 object-cover mb-2" src="/src/assets/images/Day 1/pic20.jpg">
+                    <img class="border-4 w-55 h-53 object-cover mb-2 object-[0%_60%]" src="/src/assets/images/Day 1/pic21.jpg">
+                  </div>
+                  <h2 class="absolute right-5 -bottom-2 font-futura text-xs text-black text-end mb-4 uppercase">Page 8</h2>
+                </div>
+                <div id="end-right-face" class="absolute inset-0 border-8 border-black bg-white flex flex-col backface-hidden transform-[rotateY(180deg)] [box-shadow:12px_12px_0_#000] z-10">
+                  <img class="border-4 w-full h-full object-cover mb-2 object-[0%_60%]" src="/src/assets/images/Day 1/lunetaComic.png">
+                  
+                </div>
+              </div>
+
+          </div>
+        
+        </div>
+    </div>
   </body>
+<script>
+  const book = document.getElementById('comic-book');
+  const backdropGlobal = document.getElementById('dark-backdrop-global');
+  const backdropLocal = document.getElementById('dark-backdrop-local');
+  const leaves = document.querySelectorAll('.comic-leaf');
+  const btnLeft = document.getElementById('arrow-left');
+  const btnRight = document.getElementById('arrow-right');
+
+  let currentLeafIndex = 0;
+
+  leaves.forEach((leaf, index) => {
+      leaf.style.zIndex = leaves.length - index;
+  });
+
+  const toggleBackdrops = (active) => {
+      const backdrops = [backdropGlobal, backdropLocal];
+      backdrops.forEach(el => {
+          if (el) {
+              if (active) {
+                  el.classList.remove('opacity-0', 'pointer-events-none');
+                  el.classList.add('opacity-100', 'cursor-pointer');
+              } else {
+                  el.classList.remove('opacity-100', 'cursor-pointer');
+                  el.classList.add('opacity-0', 'pointer-events-none');
+              }
+          }
+      });
+  };
+
+  const flipForward = () => {
+      if (currentLeafIndex < leaves.length) {
+          const leaf = leaves[currentLeafIndex];
+          
+          if (currentLeafIndex === 0) {
+              toggleBackdrops(true);
+              book.classList.remove('hover:scale-105', 'hover:-rotate-1');
+              book.classList.add('scale-110', 'sm:scale-125', 'translate-x-[50%]');
+          }
+          
+          leaf.classList.add('-rotate-y-180');
+          setTimeout(() => {
+              leaf.style.zIndex = currentLeafIndex; 
+          }, 350); 
+          
+          currentLeafIndex++;
+          updateArrows();
+      }
+  };
+
+  const flipBackward = () => {
+      if (currentLeafIndex > 0) {
+          currentLeafIndex--;
+          const leaf = leaves[currentLeafIndex];
+          
+          leaf.classList.remove('-rotate-y-180');
+          leaf.style.zIndex = leaves.length - currentLeafIndex;
+          
+          if (currentLeafIndex === 0) {
+              toggleBackdrops(false);
+              book.classList.remove('scale-110', 'sm:scale-125', 'translate-x-[50%]');
+              book.classList.add('hover:scale-105', 'hover:-rotate-1');
+          }
+          updateArrows();
+      }
+  };
+
+  const closeBook = () => {
+      leaves.forEach((leaf, index) => {
+          leaf.classList.remove('-rotate-y-180');
+          leaf.style.zIndex = leaves.length - index;
+      });
+      currentLeafIndex = 0;
+      toggleBackdrops(false);
+      book.classList.remove('scale-110', 'sm:scale-125', 'translate-x-[50%]');
+      book.classList.add('hover:scale-105', 'hover:-rotate-1');
+      updateArrows();
+    };
+
+  [backdropGlobal, backdropLocal].forEach(el => {
+      if (el) el.addEventListener('click', closeBook);
+  });
+
+  book.addEventListener('click', (e) => {
+      if (currentLeafIndex === 0) flipForward();
+      else {
+          // Logic to determine if user clicked left or right half of the book
+          const rect = book.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          if (x > rect.width / 2) flipForward();
+          else flipBackward();
+      }
+  });
+  const updateArrows = () => {
+    // 1. Handle General Visibility (Only show if book is open)
+      if (currentLeafIndex > 0) {
+          btnLeft.classList.remove('opacity-0', 'translate-x-[-20px]', 'pointer-events-none');
+          btnRight.classList.remove('opacity-0', 'translate-x-[20px]', 'pointer-events-none');
+          btnLeft.classList.add('opacity-100', 'translate-x-0', 'pointer-events-auto');
+          btnRight.classList.add('opacity-100', 'translate-x-0', 'pointer-events-auto');
+      } else {
+          // Book is closed: Hide EVERYTHING
+          [btnLeft, btnRight].forEach(btn => {
+              btn.classList.add('opacity-0', 'pointer-events-none');
+              btn.classList.remove('opacity-100', 'pointer-events-auto');
+          });
+          btnLeft.classList.add('translate-x-[-20px]');
+          btnRight.classList.add('translate-x-[20px]');
+      }
+
+      // 2. Hide Right Arrow specifically if we are at the very last page
+      if (currentLeafIndex === leaves.length) {
+          btnRight.classList.add('opacity-0', 'pointer-events-none');
+          btnRight.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+      
+      // 3. Hide Left Arrow specifically if we are on the first inside page (Page 1)
+      // Optional: If you want the left arrow to hide when looking at the inside cover
+      if (currentLeafIndex === 1) {
+          // btnLeft.classList.add('opacity-0', 'pointer-events-none');
+      }
+  };
+
+  // Event Listeners for your new buttons
+  btnRight.addEventListener('click', (e) => {
+      e.stopPropagation();
+      flipForward();
+      updateArrows();
+  });
+
+  btnLeft.addEventListener('click', (e) => {
+      e.stopPropagation();
+      flipBackward();
+      updateArrows();
+  });
+</script>
 </html>
