@@ -86,6 +86,35 @@
   background-size: cover;
 }
 
+@utility bg-starburst-white {
+  background-image: 
+    /* Layer 1: Thin, frequent white rays */
+    repeating-conic-gradient(
+      transparent 0deg, 
+      transparent 5deg, 
+      rgba(255, 255, 255, 0.1) 5deg, 
+      rgba(255, 255, 255, 0.1) 6deg
+    ),
+    /* Layer 2: Medium white rays */
+    repeating-conic-gradient(
+      transparent 0deg, 
+      transparent 12deg, 
+      rgba(255, 255, 255, 0.2) 12deg, 
+      rgba(255, 255, 255, 0.2) 14deg
+    ),
+    /* Layer 3: Thick, rare white rays */
+    repeating-conic-gradient(
+      transparent 0deg, 
+      transparent 35deg, 
+      rgba(255, 255, 255, 0.3) 35deg, 
+      rgba(255, 255, 255, 0.3) 39deg
+    );
+  mask-image: radial-gradient(circle, transparent 30%, black 31%);
+  -webkit-mask-image: radial-gradient(circle, transparent 40%, black 50%);
+
+  background-position: center;
+  background-size: cover;
+}
 @utility bg-starburst-centered {
   /* 1. The exact same highly-optimized starburst */
   background: repeating-conic-gradient(
